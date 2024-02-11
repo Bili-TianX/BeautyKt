@@ -1,0 +1,10 @@
+package top.bilitianx.backend.schemas
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Tag(
+    val id: Long,
+    val name: String,
+    val count: Long
+)
