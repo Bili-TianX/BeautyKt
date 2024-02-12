@@ -9,9 +9,11 @@ class PhotosPage(private val images: Iterable<String>) : Template<HTML> {
             link(rel = "stylesheet", href = "/frontend/styles.css", type = "text/css")
         }
         body {
-            div {
+            div("list") {
                 images.forEach {
-                    img(src = it) {}
+                    div {
+                        img(src = it) {}
+                    }
                 }
             }
         }

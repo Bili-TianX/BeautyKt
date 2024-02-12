@@ -10,7 +10,7 @@ class TagsPage(private val tags: Iterable<Tag>) : Template<HTML> {
             link(rel = "stylesheet", href = "/frontend/styles.css", type = "text/css")
         }
         body {
-            div {
+            div("list") {
                 tags.forEach { tag ->
                     insert(TagTemplate(tag)) { }
                 }

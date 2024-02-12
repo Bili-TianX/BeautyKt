@@ -86,11 +86,44 @@ fun Route.cssRouting() {
     route("/frontend") {
         get("/styles.css") {
             call.respondCss {
-                div {
-                    borderColor = Color.black
-                    borderRadius = 10.px
-                    borderWidth = 3.px
+                rule("p") {
+                    fontSize = 64.px
+                }
+                rule("body") {
+                    width = 100.pct
+                    margin = "0"
+                }
+
+                rule(".list") {
+                    display = Display.flex
+                    flexDirection = FlexDirection.column
+                    alignItems = Align.center
+                    justifyContent = JustifyContent.center
+                }
+
+                rule(".list div") {
+                    width = 80.pct
+
                     borderStyle = BorderStyle.solid
+                    borderColor = Color.black
+                    borderWidth = 2.px
+                    borderRadius = 15.px
+
+                    margin = "10px"
+                    padding = "10px"
+
+                    display = Display.flex
+                    flexDirection = FlexDirection.column
+                    alignItems = Align.center
+                    justifyContent = JustifyContent.center
+                }
+
+                rule(".list div p") {
+                    textAlign = TextAlign.center
+                }
+
+                rule(".list div img") {
+                    width = 100.pct
                 }
             }
         }

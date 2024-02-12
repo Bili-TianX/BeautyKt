@@ -10,7 +10,7 @@ class AlbumsPage(private val albums: Iterable<Album>) : Template<HTML> {
             link(rel = "stylesheet", href = "/frontend/styles.css", type = "text/css")
         }
         body {
-            div {
+            div("list") {
                 albums.forEach { album ->
                     insert(AlbumTemplate(album)) {}
                 }
